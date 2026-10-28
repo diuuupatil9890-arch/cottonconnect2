@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CottonConnect | Cotton Purchasing and Selling System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="boll" viewBox="0 0 64 64">
+    <g fill="#fff"><circle cx="32" cy="20" r="13"/><circle cx="19" cy="32" r="12"/><circle cx="45" cy="32" r="12"/><circle cx="32" cy="36" r="12"/></g>
+    <path d="M15 42l17 8 17-8-4 14H19z" fill="#8a5a24"/>
+  </symbol>
+</svg>
+
+<main id="auth" class="auth">
+  <aside class="hero">
+    <div class="brand"><svg><use href="#boll"/></svg><div><b>CottonConnect</b><span>Cotton Purchasing and Selling System</span></div></div>
+    <h1>Run your whole cotton business from one dashboard.</h1>
+    <p>Track suppliers, customers, purchases, sales and stock. Register your business to start.</p>
+    <ul>
+      <li>Record every purchase and sale in kilograms and rupees</li>
+      <li>See live stock by cotton type</li>
+      <li>Download monthly reports with profit and loss</li>
+    </ul>
+  </aside>
+  <section class="stage">
+    <div class="panel">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" data-tab="reg" aria-selected="true">Register</button>
+        <button type="button" role="tab" data-tab="login" aria-selected="false">Sign in</button>
+      </div>
+
+      <form id="reg" novalidate>
+        <div class="grid">
+          <div class="f full"><label for="full_name">Full name</label><input id="full_name" name="full_name" autocomplete="name"><small></small></div>
+          <div class="f full"><label for="business_name">Business name</label><input id="business_name" name="business_name" placeholder="Shree Cotton Traders"><small></small></div>
+          <div class="f"><label for="mobile">Mobile number</label><input id="mobile" name="mobile" inputmode="numeric" maxlength="10" placeholder="9876543210"><small></small></div>
+          <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com"><small></small></div>
+          <div class="f"><label for="city">City</label><input id="city" name="city"><small></small></div>
+          <div class="f"><label for="state">State</label><select id="state" name="state"></select><small></small></div>
+          <div class="f full"><label for="gstin">GSTIN <i>(optional)</i></label><input id="gstin" name="gstin" maxlength="15" placeholder="27ABCDE1234F1Z5"><small></small></div>
+          <div class="f full"><label for="password">Password</label>
+            <div class="pw"><input id="password" name="password" type="password" autocomplete="new-password"><button type="button" class="peek">Show</button></div>
+            <div class="meter" aria-hidden="true"><span></span></div><small></small></div>
+        </div>
+        <div class="f terms"><label><input type="checkbox" name="terms"> I agree to the terms and privacy policy.</label><small></small></div>
+        <button class="go" type="submit">Create my account</button>
+        <p class="form-err" role="alert"></p>
+      </form>
+
+      <form id="login" novalidate hidden>
+        <div class="grid one">
+          <div class="f"><label for="identifier">Mobile number or email</label><input id="identifier" name="identifier" autocomplete="username"><small></small></div>
+          <div class="f"><label for="lpass">Password</label>
+            <div class="pw"><input id="lpass" name="password" type="password" autocomplete="current-password"><button type="button" class="peek">Show</button></div><small></small></div>
+        </div>
+        <button class="go" type="submit">Sign in</button>
+        <p class="form-err" role="alert"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div id="app" class="app" hidden>
+  <header class="top">
+    <div class="brand"><svg><use href="#boll"/></svg><div><b>CottonConnect</b><span>Cotton Purchasing and Selling System</span></div></div>
+    <div class="clock"><span class="cal" aria-hidden="true">📅</span><div><b id="clkDate"></b><span id="clkTime"></span></div></div>
+    <details class="um">
+      <summary><span class="av" id="avatar"></span><span id="uName"></span></summary>
+      <div class="menu"><button type="button" data-go="settings">Settings</button><button type="button" id="logout">Sign out</button></div>
+    </details>
+  </header>
+  <div class="body">
+    <nav class="side" id="nav" aria-label="Main"></nav>
+    <main id="main"></main>
+  </div>
+  <footer class="foot"><span><b>CottonConnect</b> | Cotton Purchasing and Selling System</span><span>Grow Together. Trade Smarter. Support Farmers.</span></footer>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
